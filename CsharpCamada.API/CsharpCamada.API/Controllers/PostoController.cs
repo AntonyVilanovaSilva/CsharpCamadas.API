@@ -44,4 +44,68 @@ namespace CsharpCamada.API.Controllers
                 return BadRequest("error: " + ex);
             }
         }
-}   }
+
+        [HttpGet("/Posto/{id}")]
+
+        public async Task<IActionResult> PegarPostoPorId(int id)
+        {
+            try
+            {
+                return Ok(await _context.Set<Veiculo>().FindAsync(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Ocorreu um error: " + ex);
+            }
+        }
+
+        [HttpPost("/Posto/Create")]
+
+        public async Task<IActionResult> CriarPosto(Posto Model)
+        {
+            try
+            {
+                await _context.AddAsync(Model);
+                await _context.SaveChangesAsync();
+                return Ok("Posto Criado");
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest("Não foi possivel criar o Posto");
+            }
+        }
+
+        [HttpPut("/Posto/Atualizar")]
+
+        public async Task<IActionResult> AtualizarPosto(Posto Model)
+        {
+            try
+            {
+                _context.Update(Model);
+                await _context.SaveChangesAsync();
+                return Ok("Posto Atualizado");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Posto Atualizado");
+            }
+        }
+
+        [HttpDelete("/Posto/Remove/{id}")]
+
+        public async Task<IActionResult> ApagarPosto(int id)
+        {
+            try
+            {
+                var Model = await _context.Set<Posto>().FindAsync(id);
+                _context.Remove(Model);
+                await _context.SaveChangesAsync();
+                return Ok("Posto Apagado");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Posto não apagado");
+            }
+        }
+    }   }

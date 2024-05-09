@@ -43,5 +43,69 @@ namespace CsharpCamada.API.Controllers
                 return BadRequest("error: " + ex);
             }
         }
+
+        [HttpGet("/Motorista/{id}")]
+
+        public async Task<IActionResult> PegarMotoristaPorId(int id)
+        {
+            try
+            {
+                return Ok(await _context.Set<Motoristum>().FindAsync(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Ocorreu um error: " + ex);
+            }
+        }
+
+        [HttpPost("/Motorista/Create")]
+
+        public async Task<IActionResult> CriarMotorista(Motoristum Model)
+        {
+            try
+            {
+                await _context.AddAsync(Model);
+                await _context.SaveChangesAsync();
+                return Ok("Motorista Criado");
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest("Não foi possivel criar o Motorista");
+            }
+        }
+
+        [HttpPut("/Motorista/Atualizar")]
+
+        public async Task<IActionResult> AtualizarMotorista(Motoristum Model)
+        {
+            try
+            {
+                _context.Update(Model);
+                await _context.SaveChangesAsync();
+                return Ok("Motorista Atualizado");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Motorista Atualizado");
+            }
+        }
+
+        [HttpDelete("/Motorista/Remove/{id}")]
+
+        public async Task<IActionResult> ApagarMotorista(int id)
+        {
+            try
+            {
+                var Model = await _context.Set<Motoristum>().FindAsync(id);
+                _context.Remove(Model);
+                await _context.SaveChangesAsync();
+                return Ok("Motorista Apagado");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Motorista não apagado");
+            }
+        }
     }
 }

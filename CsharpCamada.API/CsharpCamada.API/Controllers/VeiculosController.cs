@@ -26,7 +26,21 @@ namespace CsharpCamada.API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("error: " + ex);
+                return BadRequest("Ocorreu um error: " + ex);
+            }
+        }
+
+        [HttpGet("/Veiculos/{id}")]
+
+        public async Task<IActionResult> PegarVeiculoPorId(int id)
+        {
+            try
+            {
+                return Ok(await _context.Set<Veiculo>().FindAsync(id));
+            } 
+            catch (Exception ex)
+            {
+                return BadRequest("Ocorreu um error: " + ex);
             }
         }
 
@@ -44,7 +58,40 @@ namespace CsharpCamada.API.Controllers
 
                 return BadRequest("Não foi possivel criar o veiculo");
             }
-        } 
+        }
+
+        [HttpPut("/Veiculos/Atualizar")]
+
+        public async Task<IActionResult> AtualizarVeiculo(Veiculo Model)
+        {
+            try
+            {
+               _context.Update(Model);
+               await _context.SaveChangesAsync();
+                return Ok("Veiculo Atualizado");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Veiculo Atualizado");
+            }
+        }
+
+        [HttpDelete("/Veiculo/Remove/{id}")]
+
+        public async Task<IActionResult> ApagarVeiculos(int id)
+        {
+            try
+            {
+                var Model = await _context.Set<Veiculo>().FindAsync(id);
+                _context.Remove(Model);
+                await _context.SaveChangesAsync();
+                return Ok("Veiculo Apagado");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Veiculo não apagado");
+            }
+        }
 
     }
 }

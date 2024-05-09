@@ -2439,11 +2439,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fusion\\Documents\\GitHub\\CsharpCamada.API\\CsharpCamada.API\\CsharpCamada.API.csproj",
+      "projectUniqueName": "C:\\Users\\fusion\\Documents\\clone\\CsharpCamadas.API\\CsharpCamada.API\\CsharpCamada.API\\CsharpCamada.API.csproj",
       "projectName": "CsharpCamada.API",
-      "projectPath": "C:\\Users\\fusion\\Documents\\GitHub\\CsharpCamada.API\\CsharpCamada.API\\CsharpCamada.API.csproj",
+      "projectPath": "C:\\Users\\fusion\\Documents\\clone\\CsharpCamadas.API\\CsharpCamada.API\\CsharpCamada.API\\CsharpCamada.API.csproj",
       "packagesPath": "C:\\Users\\fusion\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fusion\\Documents\\GitHub\\CsharpCamada.API\\CsharpCamada.API\\obj\\",
+      "outputPath": "C:\\Users\\fusion\\Documents\\clone\\CsharpCamadas.API\\CsharpCamada.API\\CsharpCamada.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

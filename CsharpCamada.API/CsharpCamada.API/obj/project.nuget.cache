@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zcWb3DRdTT4yzj/hgj/ICnO6JFZN8LpIlRndat+pepwJbk26hPWoGaSqtoeVMUI7OXX39Fm7+ixLmHeyjYUyqA==",
+  "dgSpecHash": "nKadI0lFzQ78unO64sjQlD70gA9ZGhfXp/6d2OoUorm9L4VMYB0hI/ePOSt57yBiU6Fr3hhGtpXbsXUNLe26bQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fusion\\Documents\\GitHub\\CsharpCamada.API\\CsharpCamada.API\\CsharpCamada.API.csproj",
+  "projectFilePath": "C:\\Users\\fusion\\Documents\\clone\\CsharpCamadas.API\\CsharpCamada.API\\CsharpCamada.API\\CsharpCamada.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fusion\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\fusion\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
